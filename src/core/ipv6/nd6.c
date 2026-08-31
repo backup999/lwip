@@ -304,7 +304,7 @@ nd6_process_autoconfig_prefix(struct netif *netif,
  * or a zero-length option was found.
  */
 static void *
-nd6_find_option(struct pbuf *p, int offset, int wanted_type)
+nd6_find_option(struct pbuf *p, u16_t offset, int wanted_type)
 {
   while ((p->tot_len - offset) >= 2) {
     u8_t option_type;
