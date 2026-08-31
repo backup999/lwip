@@ -129,7 +129,7 @@ START_TEST(rx_overflow)
   fail_unless(err == ERR_OK);
 
   client->conn->connected(client->conn->callback_arg, client->conn, ERR_OK);
-  memset(rxbuf, sizeof(rxbuf), 0xff);
+  memset(rxbuf, 0xff, sizeof(rxbuf));
   p = pbuf_alloc(PBUF_RAW, sizeof(rxbuf), PBUF_REF);
   fail_unless(p != NULL);
   p->payload = rxbuf;
